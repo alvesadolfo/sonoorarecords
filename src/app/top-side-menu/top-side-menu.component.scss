@@ -1,0 +1,23 @@
+.menu{
+    width: 300px;
+    //background-color: black;
+    //background-image: url('../../assets/bg-menu.png');
+    height: 100vh;
+}
+
+.logotipo{
+    padding: 30px 0;
+}
+
+.item-menu{
+    text-transform: uppercase;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    margin: 10px 0;
+    font-size: 34px;
+}
+
+.item-menu:hover{
+    color: #65c5e9;
+}

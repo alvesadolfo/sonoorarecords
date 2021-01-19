@@ -1,0 +1,19 @@
+<div class="flex" (window:resize)="onResize($event)">
+  <app-left-side-menu *ngIf="!mobile"></app-left-side-menu>
+  <div *ngIf="!artist" style="margin: 0 20px;">
+    <top-side-menu *ngIf="mobile"></top-side-menu>
+    <div style="padding-top: 20px;">
+      <a class="select-type-artist" (click)="exclusive = false" [ngClass]="{'selected-artist': !exclusive}">LAST RELEASES</a> <span style="margin: 0 10px;">|</span> <a class="select-type-artist" (click)="exclusive = true" [ngClass]="{'selected-artist': exclusive}">EXCLUSIVE ARTISTS</a>
+    </div>
+    <div class="flex justify-between f-wrap" style="height: calc(90vh - 80px); overflow: auto;">
+      <ng-container *ngFor="let artist of artistList;">
+        <div class="text-center" *ngIf="exclusive == artist.exclusive" (click)="getArtist(artist)" style="margin: 5px;">
+          <div><img height="250" width="250" src="{{artist.name_picture}}"></div>
+          <span class="uppercase">{{artist.name}}</span>
+          <h4 class="no-margin">{{artist.country}}</h4>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<footer-mobile *ngIf="mobile"></footer-mobile>

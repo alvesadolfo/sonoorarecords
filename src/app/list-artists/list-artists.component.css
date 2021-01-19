@@ -1,0 +1,14 @@
+.select-type-artist{
+    color: #fff;
+    cursor: pointer;
+}
+
+.select-type-artist:hover{
+    color: #e52b58;
+    cursor: pointer;
+}
+
+.selected-artist{
+    color: #65c5e9;
+    cursor: pointer;
+}

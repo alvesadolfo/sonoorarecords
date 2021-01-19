@@ -1,0 +1,24 @@
+<div class="flex" (window:resize)="onResize($event)">
+  <app-left-side-menu *ngIf="!mobile"></app-left-side-menu>
+  <div style="margin-left: 20px;">
+    <top-side-menu *ngIf="mobile"></top-side-menu>
+    <h2>CONTACT</h2>
+    <form [formGroup]="form">
+      <div class="flex" style="width:90%;">
+        <div>
+          <input formControlName="name" class="form-control" type="text" placeholder="Name">
+          <input formControlName="phone" class="form-control" type="text" placeholder="Phone">
+        </div>
+        <div style="margin-left: 40px;">
+          <input formControlName="email" class="form-control" type="text" placeholder="E-mail">
+          <input formControlName="facebook" class="form-control" type="text" placeholder="Facebook Page">
+        </div>
+      </div>
+      <div style="width:100%;">
+        <textarea formControlName="message" class="form-control" rows="4" cols="50" placeholder="Message"></textarea>
+        <a style="padding-right: 30px;" class="pull-right" (click)="sendForm()">SEND</a>
+      </div>
+    </form>
+  </div>
+</div>
+<footer-mobile *ngIf="mobile"></footer-mobile>

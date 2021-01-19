@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Restricted Area"
+AuthUserFile /home/storage/9/19/7f/sonoorarecords2/public_html/panel/.htpasswd
+AuthGroupFile /dev/null
+require valid-user

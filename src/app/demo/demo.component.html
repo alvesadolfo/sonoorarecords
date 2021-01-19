@@ -1,0 +1,31 @@
+<div class="flex" (window:resize)="onResize($event)">
+  <app-left-side-menu *ngIf="!mobile"></app-left-side-menu>
+  <div style="margin-left: 20px;">
+    <top-side-menu *ngIf="mobile"></top-side-menu>
+    <h2>SUBMIT YOUR DEMO</h2>
+    <form [formGroup]="form">
+      <div class="flex f-wrap">
+        <div style="width: 332px;">
+          <input formControlName="name" class="form-control" type="text" placeholder="Name">
+          <input formControlName="country" class="form-control" type="text" placeholder="Country">
+          <input formControlName="soundcloud" class="form-control" type="text"
+            placeholder="Soundcloud Demo (Private Link)">
+          <input formControlName="instagram" class="form-control" type="text" placeholder="Instagram">
+          <textarea formControlName="aboutyou" class="form-control" rows="4" cols="50"
+            placeholder="About You"></textarea>
+        </div>
+        <div style="width: 332px;">
+          <input formControlName="email" class="form-control" type="text" placeholder="E-mail">
+          <input formControlName="yearsmusicproduction" class="form-control" type="text"
+            placeholder="Years of music production">
+          <input formControlName="youtube" class="form-control" type="text" placeholder="Youtube Channel">
+          <input formControlName="facebook" class="form-control" type="text" placeholder="Facebook Page">
+          <textarea formControlName="somethingspecial" class="form-control" rows="4" cols="50"
+            placeholder="Something Special"></textarea>
+          <a class="pull-right" style="padding-right: 30px;padding-bottom: 30px;" (click)="sendForm()">SEND</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<footer-mobile *ngIf="mobile"></footer-mobile>

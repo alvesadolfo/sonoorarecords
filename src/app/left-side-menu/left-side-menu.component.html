@@ -1,0 +1,17 @@
+
+    <div class="menu">
+      <div class="w-100 logotipo text-center">
+        <img src="../assets/logo-small.png" />
+      </div>
+      <div class="w-100 text-center">
+        <span class="item-menu" (click)="navRoute('releases')">Releases</span>
+        <span class="item-menu" (click)="navRoute('artists')">Artists</span>
+        <span class="item-menu" (click)="navRoute('store')">Store</span>
+        <span class="item-menu" (click)="navRoute('demos')">Demos</span>
+        <span class="item-menu" (click)="navRoute('contact')">Contact</span>
+        <div style="margin: 0 30%;">
+          <app-links [instagram]="'https://instagram.com/sonoorarecords'" [facebook]="'https://facebook.com/sonoorarecords'" [youtube]="'https://youtube.com/sonoorarecords'" [soundcloud]="'https://soundcloud.com/sonoorarecords'"></app-links>
+        </div>
+      </div>
+    </div>
+  

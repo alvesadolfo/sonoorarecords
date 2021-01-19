@@ -1,0 +1,13 @@
+<div class="flex" (window:resize)="onResize($event)">
+  <app-left-side-menu *ngIf="!mobile"></app-left-side-menu>
+  <div *ngIf="!release" class="" style="height: 100vh; overflow: auto;padding: 0 20px;">
+    <top-side-menu *ngIf="mobile"></top-side-menu>
+    <div class="text-center" *ngFor="let release of releaseList;" (click)="getRelease(release)">
+      <div><img height="250" width="250" src="{{release.name_picture}}"></div>
+      <span class="uppercase">{{release.album_title}}</span>
+    </div>
+  </div>
+
+  <app-releases *ngIf="release" [release]="release"></app-releases>
+</div>
+<footer-mobile *ngIf="mobile"></footer-mobile>

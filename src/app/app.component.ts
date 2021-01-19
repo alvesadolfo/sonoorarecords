@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'sonoorarecords';
+  title = 'Sonoora Records';
+
+  public rota: string = "releases"
+
+  public navRoute(route){
+    this.rota = route;
+  }
+
 }

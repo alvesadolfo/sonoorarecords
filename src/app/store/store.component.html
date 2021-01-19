@@ -1,0 +1,10 @@
+<div class="flex f-wrap" style="padding-left: 20px;">
+  <app-left-side-menu *ngIf="!mobile"></app-left-side-menu>
+  <top-side-menu *ngIf="mobile"></top-side-menu>
+  <div>
+    <h3>
+      Is coming!
+    </h3>
+  </div>
+</div>
+<footer-mobile *ngIf="mobile"></footer-mobile>

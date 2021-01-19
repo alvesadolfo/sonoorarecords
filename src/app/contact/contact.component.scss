@@ -1,0 +1,12 @@
+.form-control{
+    display: block;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    margin: 5px;
+    width: 85%;
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}

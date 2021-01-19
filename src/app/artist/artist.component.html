@@ -1,0 +1,45 @@
+<div class="flex" (window:resize)="onResize($event)">
+  <app-left-side-menu *ngIf="!mobile"></app-left-side-menu>
+  <div style="padding-left: 20px;" *ngIf="artist.codigo;else loadingTemplate">
+    <top-side-menu *ngIf="mobile"></top-side-menu>
+    <div class="flex f-wrap" style="padding-top:20px;">
+      <div class="perfil">
+        <img height="300" width="300" src="{{perfilUrl}}">
+      </div>
+      <div class="bio" [ngStyle]="{'height': artist.bio ? '300px' : '100px'}">
+        <h2 class="no-margin uppercase">{{artist.name}}</h2>
+        <h3 class="no-margin uppercase">{{artist.country}}</h3>
+        <div>
+          <h5>
+            {{artist.bio}}
+          </h5>
+        </div>
+      </div>
+      <!-- <div *ngIf="fotos" class="picture flex f-wrap justify-between">
+        <div *ngFor="let foto of fotos;">
+          <img *ngIf="foto.name_picture" height="80" width="80" src="{{foto.name_picture}}">
+        </div>
+      </div> -->
+    </div>
+    <div class="flex justify-between f-wrap">
+      <div style="width: 295px;padding-right: 20px;">
+        <app-links [instagram]="artist.link_instagram" [facebook]="artist.link_facebook" [youtube]="artist.link_youtube" [soundcloud]="artist.link_soundcloud" [beatport]="artist.link_beatport"></app-links>
+      </div>
+      <div class="flex" style="width: 335px;">
+        <div style="margin:10px 10px 10px 0;"><a href="{{artist.link_presskit}}"><i class="fa fa-play"></i> PRESS KIT</a></div>
+        <div style="margin:10px;" *ngIf="artist.exclusive == 't' || artist.exclusive == 'true'" class="pointer" (click)="bookNow()"><i class="fa fa-play"></i> BOOK NOW</div>
+      </div>
+      <div style="width: 300px;"></div>
+    </div>
+    <div class="soundcloud" *ngIf="artist && artist.link_soundcloud" [ngStyle]="{'width': mobile ? '95%' : '90%'}">
+      <app-soundcloud-player [track]="artist.link_soundcloud" [artist]="'true'"></app-soundcloud-player>
+    </div>
+  </div>
+
+  <ng-template #loadingTemplate>
+    <div class="flex w-100" style="justify-content: center; align-items: center; height: 100vh;">
+      <span><i class="fa fa-4x fa-spinner fa-pulse"></i></span>
+    </div>
+  </ng-template>
+</div>
+<footer-mobile *ngIf="mobile"></footer-mobile>

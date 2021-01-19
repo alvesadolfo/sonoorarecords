@@ -1,0 +1,25 @@
+<div class="flex f-wrap" style="justify-content: center;" (window:resize)="onResize($event)">
+  <top-side-menu *ngIf="mobile"></top-side-menu>
+  <div>
+    <img height="300" width="300" src="{{fotoUrl}}">
+  </div>
+  <div class="bio" [ngStyle]="{'width': mobile ? '90%' : '45%'}">
+    <h2 class="no-margin">{{release.album_title}}</h2>
+    <h3 class="no-margin">{{release.artist_name}}</h3>
+    <div style="padding-top: 20px;">
+      {{release.album_bio}}
+    </div>
+  </div>
+</div>
+<div>
+  <app-links></app-links>
+</div>
+<div class="soundcloud" *ngIf="release && release.link_soundcloud">
+  <app-soundcloud-player [track]="release.link_soundcloud"></app-soundcloud-player>
+</div>
+<div *ngIf="release.link_beatport">
+  <a href="{{release.link_beatport}}">
+    <img height="40" style="margin-top:10px;" src="../../assets/beatport.png">
+  </a>
+</div>
+<footer-mobile *ngIf="mobile"></footer-mobile>
